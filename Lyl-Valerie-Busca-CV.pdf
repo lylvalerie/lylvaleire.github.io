@@ -1,0 +1,126 @@
+# Lyl Valerie O. Busca — Personal Portfolio
+
+A premium, modern, single-page portfolio website for **Lyl Valerie O. Busca**, Bachelor of Science in Information Systems student at Davao del Norte State College. Built with pure HTML5, CSS3, and vanilla JavaScript — no frameworks, no build tools, ready to deploy directly on GitHub Pages.
+
+---
+
+## Project Overview
+
+This portfolio presents Valerie's academic background, experience (Researcher and UI Designer roles at the Institute of Computing), core skills (JavaScript, Figma, Research, Communication, Adaptability, Problem Solving), and projects in a clean, glassmorphism-inspired design with a professional teal-and-charcoal color palette. It's built to be recruiter-friendly, fully responsive, accessible, and fast-loading with zero external framework dependencies.
+
+**Live sections:** Hero · About · Education · Experience · Skills · Projects · References · Contact
+
+---
+
+## Features
+
+- **Glassmorphism design system** with a custom palette (`#1B2824`, `#304E4D`, `#4F7A78`, `#F5F7F6`, `#121A18`) and Poppins/Inter typography
+- **Dark / Light mode toggle** with saved preference (`localStorage`) and system-preference detection
+- **Sticky, scroll-aware navigation bar** with active-section highlighting
+- **Mobile-first responsive navigation** with an animated hamburger menu
+- **Typing animation** in the hero introducing the course title
+- **Scroll-reveal animations** across every section (fade/slide/scale on entry)
+- **Animated skill bars and percentage counters**
+- **Animated stat counters** in the About section
+- **Loading screen** with a branded animated mark
+- **Smooth scrolling** between all in-page anchors
+- **Interactive project cards** with hover overlays, tech badges, GitHub and Live Demo buttons
+- **Animated vertical education timeline**
+- **Contact section** with a client-side validated form (opens the visitor's email client — no backend required), contact cards, social icons, and a map placeholder
+- **Circular profile photo** in the Hero section with a glassmorphism frame, soft shadow, and hover animation
+- **Emphasized keyword styling** in section headings and the hero intro for a more editorial, less templated feel
+- **Personality tag pills** in the About section (Analytical Thinker, Detail Oriented, Fast Learner, etc.)
+- **Descriptive skill cards** — each skill pairs an icon, a one-line description, and an animated progress bar
+- **Split first/last name fields** on the contact form
+- **SEO**: meta description/keywords, canonical tag, Open Graph + Twitter Card tags, and JSON-LD structured data (`Person` schema)
+- **Accessibility**: skip-to-content link, visible focus states, semantic landmarks, ARIA labels on icon-only controls, `prefers-reduced-motion` support
+- **Back-to-top button** and footer with quick links and social icons
+
+---
+
+## Folder Structure
+
+```
+portfolio/
+├── index.html                          # Main page — all sections
+├── style.css                           # Full stylesheet (design system, layout, animations)
+├── script.js                           # All interactivity (vanilla JS, no dependencies)
+├── README.md                           # This file
+├── favicon.ico                         # Site favicon
+└── assets/
+    ├── images/
+    │   ├── profile.jpg                 # Hero profile photo (circular, glassmorphism frame)
+    │   ├── project1.png                # Project screenshot — JavaScript CRUD System
+    │   ├── project2.png                # Project screenshot — UI/UX Prototype Design
+    │   └── project3.png                # Project screenshot — Academic Research Projects
+    ├── documents/
+    │   └── Lyl-Valerie-Busca-CV.pdf    # Downloadable CV (linked from the "Download CV" button)
+    └── icons/                          # Reserved for any additional custom icon assets
+```
+
+> **Note on placeholder assets:** `project1.png`, `project2.png`, `project3.png`, and the CV PDF were generated as clean placeholders so the site is complete and deployable out of the box. Swap them for real project screenshots and Valerie's actual CV file (keeping the same filenames, or updating the paths in `index.html`) whenever they're ready.
+
+---
+
+## Installation
+
+No build step, no package manager, no dependencies to install.
+
+1. Download or clone this `portfolio/` folder.
+2. Open `index.html` directly in a browser, **or** serve it locally for the best experience (some browsers restrict local file access for certain features):
+
+   ```bash
+   # Python 3
+   cd portfolio
+   python3 -m http.server 8000
+   # then visit http://localhost:8000
+   ```
+
+   ```bash
+   # Node.js (if installed)
+   npx serve portfolio
+   ```
+
+---
+
+## Customization
+
+- **Colors:** all palette colors are defined once as CSS custom properties at the top of `style.css` under `:root`. Change `--primary`, `--secondary`, `--accent`, `--bg`, and `--dark` to restyle the entire site instantly.
+- **Fonts:** loaded via Google Fonts in `index.html` (`Poppins` for display/headings, `Inter` for body text). Swap the `<link>` tag and the `--font-display` / `--font-body` variables in `style.css` to change fonts.
+- **Content:** all text content lives directly in `index.html`, organized by section with clear comments (`<!-- HERO SECTION -->`, `<!-- ABOUT SECTION -->`, etc.).
+- **Profile photo:** replace `assets/images/profile.jpg` with a new image of the same aspect ratio (square, ideally 800×800px or larger) to update the Hero photo — no code changes needed.
+- **Projects:** duplicate a `.project-card` block in the Projects section and update the image, title, description, tech badges, and links to add more projects.
+- **Skills:** each skill bar's fill percentage is controlled by the `data-width` attribute on `.skill-fill` and `data-target` on `.skill-percent` — update both to the same number to change a skill's displayed level.
+- **Dark mode default:** the site respects the visitor's OS-level dark/light preference on first visit, then remembers their manual toggle choice via `localStorage`.
+
+---
+
+## GitHub Pages Deployment
+
+1. Create a new GitHub repository (e.g. `portfolio`).
+2. Push the entire contents of this `portfolio/` folder to the repository's root (or to a `docs/` folder if you prefer).
+3. In the repository, go to **Settings → Pages**.
+4. Under **Build and deployment → Source**, select **Deploy from a branch**.
+5. Choose the branch (usually `main`) and the root folder (`/` or `/docs`), then save.
+6. GitHub will publish the site at:
+   ```
+   https://<your-username>.github.io/<repository-name>/
+   ```
+7. Update the `og:url` and `canonical` meta tags in `index.html` with your actual published URL for correct link previews and SEO.
+
+No additional configuration, build step, or `.nojekyll` file is required since this is a static HTML/CSS/JS site.
+
+---
+
+## Future Improvements
+
+- Connect the contact form to a real backend or a form service (e.g. Formspree, EmailJS) for direct message delivery without opening the visitor's email client
+- Replace placeholder project screenshots with real, live project screenshots and working GitHub/demo links
+- Add a blog or certificates section as more academic and professional milestones are completed
+- Add multi-language support (English/Filipino toggle)
+- Integrate a real interactive map (e.g. Leaflet or Google Maps embed) in place of the map placeholder
+- Add unit/UI testing with a lightweight tool like Playwright for regression-safe future edits
+
+---
+
+© 2026 Lyl Valerie O. Busca. All Rights Reserved.
